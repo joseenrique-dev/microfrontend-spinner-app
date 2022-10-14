@@ -14,7 +14,7 @@ const App = () => (
   <BrowserRouter>
     <div className="mt-10 text-3xl mx-auto max-w-6xl">
       <SafeComponent>
-        <Header app={{ name: 'PDP' }}/>
+        <Header />
       </SafeComponent>
       <div className="my-10">
         <Routes>
