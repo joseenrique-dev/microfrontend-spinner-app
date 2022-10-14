@@ -21,7 +21,7 @@ export default function Login() {
         });
     }
 
-    // if ( !loggedIn ) return null;
+    if ( loggedIn ) return null;
 
     return (
         <>
