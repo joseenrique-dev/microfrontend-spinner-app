@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { login, useLogeedIn } from './cart';
+import { login, useLoggedIn } from './cart';
 
 export default function Login() {
-    const loggedIn = useLogeedIn();
+    const loggedIn = useLoggedIn();
     const [ showLogin, setShowLogin ] = useState(false);
 
     const [ username, setUsername ] = useState("sally");
@@ -13,7 +13,7 @@ export default function Login() {
         login(username,password)
         .then((token)=>{
             console.log(token);
-            setShowLoggin(true);
+            setShowLogin(true);
         })
         .catch(err =>{
             debugger
@@ -34,7 +34,7 @@ export default function Login() {
           style={{
             width: 300,
             top: "2rem",
-            left: -250,
+            // left: -250,
           }}
         >
           <input
