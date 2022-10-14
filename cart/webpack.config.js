@@ -48,7 +48,11 @@ module.exports = {
         prod_detail_page: "prod_detail_page@http://localhost:3001/remoteEntry.js",
         cart: "cart@http://localhost:3002/remoteEntry.js",
       },
-      exposes: {},
+      exposes: {
+        './cart': './src/cart.js',
+        './Login': './src/Login.jsx',
+        './MiniCart': './src/MiniCart.js',
+      },
       shared: {
         ...deps,
         react: {

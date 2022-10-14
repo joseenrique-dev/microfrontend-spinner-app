@@ -12,7 +12,9 @@ export default function MiniCart(){
             setItems(element?.cartItems);
         });
     });
+
     if( !items ) return null;
+    
     return (
         <>
             <span onClick={() => setShowCart(!showCart)} id="showcart_span">
