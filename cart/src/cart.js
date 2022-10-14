@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { BehaviorSubject } from "rxjs";
 
 const API_SERVER = "http://localhost:8080";
@@ -21,7 +20,7 @@ export const login = (username, password) =>
     .then((res) => res.json())
     .then((data) => {
       jwt.next(data.access_token);
-      getCart();
+      // getCart();
       return data.access_token;
     });
 
