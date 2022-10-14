@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { BehaviorSubject } from "rxjs";
 
 const API_SERVER = "http://localhost:8080";
@@ -24,3 +25,7 @@ export const login = (username, password) =>
       return data.access_token;
     });
 
+  export const useLogeedIn = () =>{
+   const [ loggedIn, setLoggedIn ] = useState( !!jwt.value ); 
+   return loggedIn;
+  }
