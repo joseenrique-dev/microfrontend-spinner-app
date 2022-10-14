@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BehaviorSubject } from "rxjs";
 
 const API_SERVER = "http://localhost:8080";
@@ -27,5 +27,10 @@ export const login = (username, password) =>
 
   export const useLogeedIn = () =>{
    const [ loggedIn, setLoggedIn ] = useState( !!jwt.value ); 
+   useEffect(()=>{
+     setLoggedIn( !!jwt );
+     return jwt.subscribe((resp) => setLoggedIn( !!jwt.value ));
+   });
+
    return loggedIn;
   }
