@@ -26,7 +26,7 @@ export default function Login() {
     return (
         <>
             <span onClick={()=> setShowLogin(!showLogin)}>
-                <i className='ri-fingerprint-line text2x1' id='showLogin'></i>
+                <i className='ri-fingerprint-line text2x1 cursor-pointer' id='showLogin'></i>
             </span>
             {showLogin && (
         <div
