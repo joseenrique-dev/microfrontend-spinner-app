@@ -21,6 +21,7 @@ const MainLayout = () => (
         <Routes>
           <Route exact path="/" element={<HomeContent />} />
           <Route path="/product/:id" element={<PDPContent />} />
+          <Route path="/cart" element={<CartContent />} />
         </Routes>
         <PDPContent />
       </div>
