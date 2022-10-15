@@ -41,9 +41,11 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "host",
+      name: "addtocard",
       filename: "remoteEntry.js",
-      remotes: {},
+      remotes: {
+        cart: "cart@http://localhost:3002/remoteEntry.js"
+      },
       exposes: {},
       shared: {
         ...deps,
