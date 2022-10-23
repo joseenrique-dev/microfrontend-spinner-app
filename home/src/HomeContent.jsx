@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { getProducts, currency } from "./products";
+import { getProducts, currency } from './products';
 import { addToCart, useLoggedIn } from 'cart/cart';
+import { useStore } from 'store/store'
 
 export default function HomeContent() {
-    const [ products, setProducts ] = useState([]);
+    const [ productsList, setProductsList ] = useState([]);
 
     const loggedIn = useLoggedIn();
+    const { products } = useStore();
 
-    useEffect(()=>{
-        getProducts().then(setProducts);
-    }, []);
 
     return (
         <div className="grid grid-cols-4 gap-5">
