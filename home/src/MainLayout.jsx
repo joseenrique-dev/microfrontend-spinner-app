@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from "home/Header";
 import Footer from "home/Footer";
@@ -9,9 +9,17 @@ import CartContent from 'cart/CartContent';
 
 import "remixicon/fonts/remixicon.css";
 import "./index.scss";
+import { useStore } from 'store/store';
 
 
-const MainLayout = () => (
+const MainLayout = () => {
+  const { getStoreProducts } = useStore();
+  
+  useEffect(
+    ()=>getStoreProducts()
+  ,[]);
+
+  return (
   <BrowserRouter>
     <div className="mt-10 text-3xl mx-auto max-w-6xl">
       <SafeComponent>
@@ -28,6 +36,6 @@ const MainLayout = () => (
       <Footer />
     </div>
   </BrowserRouter>
-);
+)};
 
 export default MainLayout;

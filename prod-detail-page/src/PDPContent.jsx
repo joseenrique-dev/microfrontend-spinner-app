@@ -2,14 +2,17 @@ import React, { useState, useEffect, useRef } from "react";
 import { useParams } from 'react-router-dom';
 import { currency, getProductById } from '../../home/src/products';
 import placeAddToCart from "addtocart/placeAddToCart";
+import { useStore } from "store/store";
 
 export default function PDPContent() {
   const { id } = useParams();
+  const { products } = useStore();
   const [ product, setProduct ] = useState(null);
   const addToCart = useRef(null);
   
   useEffect(()=>{
-    getProductById( id ).then(setProduct);
+    const selectedProduct = products.find(p=> p.id == id);
+    setProduct(selectedProduct);
   },[]);
 
   useEffect(()=>{
