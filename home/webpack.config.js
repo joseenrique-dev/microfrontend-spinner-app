@@ -47,6 +47,7 @@ module.exports = {
         home: "home@http://localhost:3000/remoteEntry.js",
         prod_detail_page: "prod_detail_page@http://localhost:3001/remoteEntry.js",
         cart: "cart@http://localhost:3002/remoteEntry.js",
+        store: "store@http://localhost:3004/remoteEntry.js"
       },
       exposes: {
         './Header': './src/Header.jsx',
