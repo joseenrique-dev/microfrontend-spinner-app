@@ -12,7 +12,8 @@ export default function CartContent() {
     },[]);
 
     useEffect(
-        ()=> cart.subscribe((value)=> setItems(value?.cartItems ?? [])),[]);
+        ()=> cart.subscribe((value)=> {
+            setItems(value?.cartItems ?? [])}),[]);
 
     return (
         <>

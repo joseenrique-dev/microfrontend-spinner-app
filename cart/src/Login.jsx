@@ -5,21 +5,8 @@ export default function Login() {
     const loggedIn = useLoggedIn();
     const [ showLogin, setShowLogin ] = useState(false);
 
-    const [ username, setUsername ] = useState("sally");
+    const [ username, setUsername ] = useState("jose");
     const [ password, setPassword ] = useState("123");
-
-    const onLoginSubmit = (event) =>{
-        event.preventDefault(); 
-        login(username,password)
-        .then((token)=>{
-            console.log(token);
-            setShowLogin(true);
-        })
-        .catch(err =>{
-            debugger
-            console.log(err)
-        });
-    }
 
     if ( loggedIn ) return null;
 
