@@ -19,7 +19,7 @@ export default ({ id }) => {
           onClick={() => addToCart(id)}
           class='bg-red-900 text-white py-2 px-5 rounded-md text-sm mt-5 example-css'
         >
-          Add To Cartaa
+          Add To Cart
         </button>
       </div>
     </Show>
