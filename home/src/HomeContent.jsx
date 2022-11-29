@@ -10,9 +10,9 @@ export default function HomeContent() {
   const { products } = useStore();
 
   return (
-    <div className='grid grid-cols-4 gap-5'>
+    <div id='home' className='grid grid-cols-4 gap-5'>
       {products.map((product) => (
-        <div key={product.id} id='home'>
+        <div key={product.id}>
           <Link to={`/product/${product.id}`}>
             <img src={product.image} alt={product.name} />
           </Link>
