@@ -48,6 +48,22 @@ git clone https://github.com/joseenrique-dev/microfrontend-spinner-app.git
   yarn start
 ```
 
+6.Open **Store** MF app [run in port: 3004]
+
+```sh
+  cd store
+  yarn install || yarn
+  yarn start
+```
+
+7.Open **Server** app
+
+```sh
+  cd server
+  yarn install || yarn
+  yarn start
+```
+
 ### Architecture App
 
 ![image](https://user-images.githubusercontent.com/20423639/197955673-eecc973f-dbc3-4117-99c5-4519a4a2e581.png)
