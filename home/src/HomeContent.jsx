@@ -4,12 +4,14 @@ import { Link } from 'react-router-dom';
 import { currency } from './products';
 import { addToCart, useLoggedIn } from 'cart/cart';
 import { useStore } from 'store/store';
-import styles from './example-css.module.scss';
+import styles from './exampleCss.module.scss';
+
+export const globalHomeStyle = styles;
 
 export default function HomeContent() {
   const loggedIn = useLoggedIn();
   const { products } = useStore();
-  console.log('css module log->', styles);
+  console.log('Local css module log->', styles);
 
   return (
     <div className='grid grid-cols-4 gap-5'>

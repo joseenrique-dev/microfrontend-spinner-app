@@ -3,12 +3,18 @@ import { useParams } from 'react-router-dom';
 import { currency, getProductById } from '../../home/src/products';
 import placeAddToCart from 'addtocart/placeAddToCart';
 import { useStore } from 'store/store';
+import { globalHomeStyle } from 'home/HomeContent';
 
 export default function PDPContent() {
   const { id } = useParams();
   const { products } = useStore();
   const [product, setProduct] = useState(null);
   const addToCart = useRef(null);
+
+  console.log(
+    'Test my experiment [load a css by MF Home] 🤞==>',
+    globalHomeStyle
+  );
 
   useEffect(() => {
     const selectedProduct = products.find((p) => p.id == id);
@@ -27,7 +33,11 @@ export default function PDPContent() {
       </div>
       <div>
         <div className='flex'>
-          <h1 className='font-bold text-3x1 flex-grow'>{product.name}</h1>
+          <h1
+            className={`font-bold text-3x1 flex-grow ${globalHomeStyle.exampleCss}`}
+          >
+            {product.name}
+          </h1>
           <div className='font-bold text-3x1 flex-end'>
             {currency.format(product.price)}
           </div>
