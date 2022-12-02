@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Header, { cssExample } from 'home/Header';
+import Header from 'home/Header';
 import Footer from 'home/Footer';
 import SafeComponent from './SafeComponent';
 import PDPContent from './PDPContent';
@@ -10,7 +10,6 @@ import { StoreProvider } from 'store/store';
 import 'remixicon/fonts/remixicon.css';
 import './index.scss';
 
-console.log('test importation', cssExample);
 const App = () => (
   <StoreProvider>
     <BrowserRouter>
