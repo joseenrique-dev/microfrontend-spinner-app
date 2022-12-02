@@ -4,13 +4,15 @@ import { Link } from 'react-router-dom';
 import { currency } from './products';
 import { addToCart, useLoggedIn } from 'cart/cart';
 import { useStore } from 'store/store';
+import styles from './example-css.module.scss';
 
 export default function HomeContent() {
   const loggedIn = useLoggedIn();
   const { products } = useStore();
+  console.log('css module log->', styles);
 
   return (
-    <div id='home' className='grid grid-cols-4 gap-5'>
+    <div className='grid grid-cols-4 gap-5'>
       {products.map((product) => (
         <div key={product.id}>
           <Link to={`/product/${product.id}`}>
@@ -20,7 +22,9 @@ export default function HomeContent() {
             <div className='flex-frow font-bold'>{product.name}</div>
             <div className='flex-end'>{currency.format(product.price)}</div>
           </div>
-          <div className='text-sm mt-4 example-css'>{product.description}</div>
+          <div className={`text-sm mt-4 ${styles.exampleCss}`}>
+            {product.description}
+          </div>
           {loggedIn && (
             <div className='text-right mt-2'>
               <button

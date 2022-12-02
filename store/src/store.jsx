@@ -37,7 +37,6 @@ export const store = configureStore({
 
 export function useStore() {
   const products = useSelector((state) => state.products.productsList);
-  console.log('Products from store UseStore', products);
   const dispatch = useDispatch();
   return {
     products,
